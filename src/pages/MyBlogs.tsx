@@ -21,6 +21,7 @@ export const MyBlogs = () => {
     const [myPosts, setMyPosts] = useState<BlogsCardType[]>([]);
     const [error, setError] = useState("");
     const [userName, setUserName] = useState('');
+    const [loggedIn, setLoggedIn] = useState(false);
 
     const fetchMyPosts = async () => {
         const token = localStorage.getItem("token") || "";
@@ -33,7 +34,8 @@ export const MyBlogs = () => {
             // console.log(response);
             const data = await response.data;
             if (data.userName) {
-                setUserName(data.userName)
+                setUserName(data.userName);
+                setLoggedIn(true);
             }
             const allPosts = data.allBlogs;
             setMyPosts(allPosts);
@@ -51,7 +53,7 @@ export const MyBlogs = () => {
     if (error) {
         return (
             <>
-                <AppBar loggedIn={true} name={userName} />
+                <AppBar loggedIn={loggedIn} name={userName} />
                 <div className='text-3xl text-center p-4 font-bold flex justify-center'>
                     {error}
                 </div>
@@ -62,7 +64,7 @@ export const MyBlogs = () => {
     if (myPosts.length <= 0) {
         return (
             <>
-                < AppBarSkeleton />
+                < AppBarSkeleton loggedIn={loggedIn} />
                 < BlogCardSkeleton />
                 < BlogCardSkeleton />
                 < BlogCardSkeleton />
@@ -72,7 +74,7 @@ export const MyBlogs = () => {
 
     return (
         <>
-            <AppBar loggedIn={true} name={userName} />     {/* Blog & Blogs should be same */}
+            <AppBar loggedIn={loggedIn} name={userName} />     {/* Blog & Blogs should be same */}
             <div className='text-3xl text-center text-red-700 p-3 font-bold'>
                 Click on the blog card for updating the blog
             </div>

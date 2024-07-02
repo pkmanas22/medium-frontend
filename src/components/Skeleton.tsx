@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import Skeleton from '@mui/material/Skeleton';
 import { useNavigate } from 'react-router-dom';
 
-export const AppBarSkeleton = () => {
+export const AppBarSkeleton = ({ loggedIn }: { loggedIn: boolean}) => {
     const navigate = useNavigate()
     return (
         <div className='px-6 py-2 flex  justify-between items-center border-b-2 shadow-md'>
@@ -14,8 +14,11 @@ export const AppBarSkeleton = () => {
                 BlogVista
             </div>
             <div className='flex gap-2 pr-2 items-center'>
-
-                <div className='text-lg font-semibold italic outline outline-2 px-4 rounded-xl outline-slate-400 cursor-pointer hover:bg-slate-100'
+                <div
+                    onClick={() => {
+                        navigate(loggedIn ? '/new' : '/signin')
+                    }}
+                    className='text-lg font-semibold italic outline outline-2 px-4 rounded-xl outline-slate-400 cursor-pointer hover:bg-slate-100'
                 >
                     Write
                 </div>

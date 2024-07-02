@@ -64,7 +64,7 @@ export const Blogs = () => {
   if (publicPosts.length <= 0) {
     return (
       <>
-        < AppBarSkeleton />
+        < AppBarSkeleton loggedIn={loggedIn} />
         < BlogCardSkeleton />
         < BlogCardSkeleton />
         < BlogCardSkeleton />

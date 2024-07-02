@@ -69,7 +69,7 @@ export const Blog = () => {
     if (!blog) {
         return (
             <>
-                < AppBarSkeleton />
+                < AppBarSkeleton loggedIn={loggedIn} />
                 < BlogPageSkeleton />
             </>
         );

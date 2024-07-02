@@ -74,7 +74,7 @@ export const BlogEdit = () => {
     if (!blog) {
         return (
             <>
-                < AppBarSkeleton />
+                < AppBarSkeleton loggedIn={loggedIn} />
                 < CreateCardSkeleton />
             </>
         )
