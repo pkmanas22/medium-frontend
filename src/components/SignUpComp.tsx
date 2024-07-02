@@ -80,6 +80,7 @@ export const SignUpComp = () => {
                 label="Your name"
                 type="text"
                 placeholder="Enter your name"
+                //@ts-ignore
                 register={register}
                 error={errors.name}
                 onChangeFn={(e) => {
@@ -91,6 +92,7 @@ export const SignUpComp = () => {
                 label="Your email"
                 type="email"
                 placeholder="Enter your email"
+                //@ts-ignore
                 register={register}
                 error={errors.email}
                 onChangeFn={(e) => {
@@ -102,6 +104,7 @@ export const SignUpComp = () => {
                 label="Your password"
                 type="password"
                 placeholder="Enter your password"
+                //@ts-ignore
                 register={register}
                 error={errors.password}
                 onChangeFn={(e) => {

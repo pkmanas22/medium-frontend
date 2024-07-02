@@ -31,6 +31,7 @@ export const InputComp = ({
                 id={id}
                 type={type}
                 placeholder={placeholder}
+                //@ts-ignore
                 {...register(id)}
                 onChange={onChangeFn} />
             {error && <span className="font-bold text-red-800 rounded-lg bg-red-50">

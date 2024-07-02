@@ -1,5 +1,5 @@
 type blogType = {
-    title: unknown;
+    title: string;
     subTitle: string;
     content: string;
     author: string;
